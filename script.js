@@ -36,6 +36,7 @@ const getData = async (event) => {
     data = orgData;
     console.log(data);
 
+    
     countryName.innerHTML = data.location.country;
     stateName.innerHTML = data.location.region;
     cityName.innerHTML = data.location.name;
@@ -43,5 +44,17 @@ const getData = async (event) => {
     windSpeed.innerHTML = data.current.wind_kph;
     temprature.innerHTML = data.current.temp_c;
     logoImage.src = data.current.condition.icon;
-    weatherStatus.innerHTML = data.current.condition.text;     
+    weatherStatus.innerHTML = data.current.condition.text;   
+    
+    
+
+
+
+    const fetchData1 = await fetch(
+        `https://aio-web-app.vercel.app/getfood`
+      );
+
+    const orgData1 = await fetchData.json();
+    data = orgData;
+    console.log(data);
 };
